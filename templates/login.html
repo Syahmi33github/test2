@@ -1,0 +1,270 @@
+{% extends 'base.html' %}
+
+{% block static %}
+    {% load static %}
+{% endblock static %}
+
+{% block title %}
+    {{Judul}}    
+{% endblock title %}
+
+{% block css %}
+    <!-- <link rel="stylesheet" href="{% static 'css/login.css' %}">  -->
+    <style>
+        body{
+            background-color: royalblue !important;
+        }
+        
+        .h3navbar{
+            line-height: 50px;
+            color: white;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        
+        .tulisannavbarketengah{
+            margin-left: 0%;
+        }
+        
+        .kotak {
+            margin: 50% auto 0;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            position: absolute;
+            background-color: rgb(231, 85, 0);
+            width: 270px;
+            height: 85px;
+            display: block;
+            box-shadow: inset 0px 0px 12px 3px rgba(0,0,0,0.3);
+            border-radius: 5%;
+        }
+        
+        .animationkotak {
+            animation: animasikotak 2s ease-in 1 reverse forwards;
+        }
+        
+        @keyframes animasikotak{
+            0% {
+                width: 270px;
+                height: 250px;
+                margin-top: 40%;
+            }
+        
+            100% {
+                margin-top: 50%;
+                
+            }
+        }
+        
+        h1 {
+            text-align: center;
+        }
+        
+        .form {
+            margin-left: 17%;
+            margin-top: 5%;
+            position: absolute;
+        }
+        
+        .isiian {
+            margin-top: 1px;
+        }
+        
+        .label {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .login {
+            opacity: 0%;
+            margin-bottom: 15%;
+        }
+        
+        .animationlogin {
+            animation: opacitytulisan 1s ease-in 1 reverse forwards;
+            animation-delay: 2s;
+        }
+        
+        @keyframes opacitytulisan{
+            0% {
+                opacity: 100%;
+                margin-left: 0%;
+            }
+        
+            100% {
+                opacity: 0%;
+                margin-left: 0%;
+            }
+        }
+        
+        .buttonlogin{
+            background-color: rgb(3, 197, 3);
+        }
+        
+        .buttonregister{
+            position: absolute;
+            margin-left: 65%;
+            margin-top: -32%;
+            background-color: yellowgreen;
+            opacity: 0%;
+        }
+        
+        .animationbuttonregister {
+            animation: animationbuttonregister 1s ease-in 1 reverse forwards;
+            animation-delay: 2s;
+        }
+        
+        @keyframes animationbuttonregister{
+            0% {
+                opacity: 100%;
+            }
+        
+            100% {
+                opacity: 0%;
+                
+            }
+        }
+
+        .pesanerror{
+            width: 270px;
+            height: 80px;
+            background-color: red;
+            margin-top: 25%;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 5%;
+            
+        }
+
+        .pesanerroropacity {
+            animation: pesanerroropacity 2s ease-in 1 reverse forwards;
+        }
+        
+        @keyframes pesanerroropacity{
+            0% {
+                opacity: 0%;
+                margin-top: 35%;
+            }
+        
+            100% {
+                opacity: 100%;
+                
+            }
+        }
+
+        .tulisanpesanerror{
+            text-align: center;
+            font-size: 25px;
+            color: wheat;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        
+        @media screen and (min-width: 567px) {
+            .navbar{
+                height: 70px;
+            }
+        
+            .login {
+                opacity: 0%;
+                margin-left: 450%;
+            }
+            
+            .tulisannavbarketengah{
+                margin-left: -15%;
+            }
+        
+            .kotak {
+                margin: 17% auto 0;
+            }
+        
+            @keyframes animasikotak{
+                0% {
+                    width: 300px;
+                    height: 250px;
+                    margin-top: 11%;
+                }
+            
+                100% {
+                    margin-top: 17%;
+                    
+                }
+            }
+
+            @keyframes pesanerroropacity{
+                0% {
+                    opacity: 0%;
+                    margin-top: 20%;
+                }
+            
+                100% {
+                    opacity: 100%;
+                    
+                }
+            }
+        }
+    </style>
+{% endblock css %}
+
+{% block contents %}
+    {%include "snippets/navbar.html"%}
+        
+    {%if messages%}
+        {%for message in messages%}
+        <div class="pesanerror">
+            <h3 class="tulisanpesanerror">
+                {{message}}
+            </h3>
+        </div>
+        {% endfor %}
+    {% endif %}
+
+    <div class="kotak">
+        <div class="form">
+            <h1>LOG IN</h1>
+            <form class="login" method="POST">
+                {% csrf_token %}
+                <label class="label" for="username">Username: </label>
+                <br>
+                <input class="isiian" type="text" name="username" id="username">
+                <br>
+                <label class="label" for="password">Password: </label>
+                <br>
+                <input class="isiian" type="password" name="password" id="password">
+                <br>
+                <br>
+                <button type ="submit" class="buttonlogin">Login</button>
+            </form>
+            <a href="{% url 'register' %}">
+                <button class="buttonregister">Register</button>
+            </a>
+        </div>
+    </div>
+    
+
+{% endblock contents %}
+
+{% block js %}
+    <!-- <script src="{% static 'java/login.js' %}"></script> -->
+    <script>
+        const kotak = document.querySelector('.kotak');
+        const login = document.querySelector('.login');
+        const buttonregister = document.querySelector('.buttonregister');
+        const pesanerror = document.querySelector('.pesanerror');
+        
+
+        function ubahWarna (){
+            kotak.classList.add('animationkotak');
+            login.classList.add('animationlogin');
+            buttonregister.classList.add('animationbuttonregister');
+            pesanerror.classList.add('pesanerroropacity');
+        }
+
+        kotak.onclick = ubahWarna;
+    </script>
+{% endblock js %}
+
+    
+
+    
+    

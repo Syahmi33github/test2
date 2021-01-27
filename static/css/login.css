@@ -1,0 +1,155 @@
+body{
+    background: aqua;
+    overflow: hidden;
+
+}
+
+.h3navbar{
+    line-height: 50px;
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.tulisannavbarketengah{
+    margin-left: 0%;
+}
+
+.background{
+    position: relative;
+    width: 100%;
+    height: 2000px;
+    background-color: royalblue;
+}
+
+.kotak {
+    margin: 50% auto 0;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    position: absolute;
+    background-color: brown;
+    width: 300px;
+    height: 85px;
+    display: block;
+    box-shadow: inset 0px 0px 12px 3px rgba(0,0,0,0.3);
+    border-radius: 5%;
+}
+
+.animationkotak {
+    animation: animasikotak 2s ease-in 1 reverse forwards;
+}
+
+@keyframes animasikotak{
+    0% {
+        width: 300px;
+        height: 250px;
+        margin-top: 40%;
+    }
+
+    100% {
+        margin-top: 50%;
+        
+    }
+}
+
+h1 {
+    text-align: center;
+}
+
+.form {
+    margin-left: 17%;
+    margin-top: 5%;
+    position: absolute;
+}
+
+.isiian {
+    margin-top: 1px;
+}
+
+.label {
+    margin: 0;
+    padding: 0;
+}
+
+.login {
+    opacity: 100%;
+    margin-bottom: 10%;
+}
+
+.animationlogin {
+    animation: opacitytulisan 1s ease-in 1 reverse forwards;
+    animation-delay: 2s;
+}
+
+@keyframes opacitytulisan{
+    0% {
+        opacity: 100%;
+        margin-left: 0%;
+    }
+
+    100% {
+        opacity: 0%;
+        margin-left: 0%;
+    }
+}
+
+.buttonlogin{
+    background-color: rgb(3, 197, 3);
+}
+
+.buttonregister{
+    position: absolute;
+    margin-left: 65%;
+    margin-top: -17%;
+    background-color: yellowgreen;
+    opacity: 0%;
+}
+
+.animationbuttonregister {
+    animation: animationbuttonregister 1s ease-in 1 reverse forwards;
+    animation-delay: 2s;
+}
+
+@keyframes animationbuttonregister{
+    0% {
+        opacity: 100%;
+    }
+
+    100% {
+        opacity: 0%;
+        
+    }
+}
+
+@media screen and (min-width: 567px) {
+    .navbar{
+        height: 70px;
+    }
+
+    .login {
+        opacity: 0%;
+        margin-left: 450%;
+    }
+    
+    .tulisannavbarketengah{
+        margin-left: -15%;
+    }
+
+    .kotak {
+        margin: 17% auto 0;
+    }
+
+    @keyframes animasikotak{
+        0% {
+            width: 300px;
+            height: 250px;
+            margin-top: 11%;
+        }
+    
+        100% {
+            margin-top: 17%;
+            
+        }
+    }
+}

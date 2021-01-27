@@ -1,0 +1,152 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            background-color: gray !important;
+        }
+            
+        img {
+            display: block;
+            position: relative;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        
+        }
+        
+        a{
+            text-decoration: none;
+        }
+
+        .pembungkus {
+            display: grid;
+            position: relative;
+            width: 53%;
+            grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+            margin: 30% auto 0;
+            list-style: none;
+            gap: 15px;
+        }
+
+        .list{
+            position: relative;
+            background-color: forestgreen;
+            overflow: hidden;
+            box-shadow: 0px 0px 12px 3px rgba(0,0,0,0.5);
+            border-radius: 15%;
+        }
+
+        .kotakjudul{
+            background-color: rgb(241, 241, 241);
+            position: absolute;
+            width: 100%;
+            height: 30px;
+            z-index: 5;
+            margin-top: -15%;
+        }
+
+        .judul{
+            text-align: center;
+            font-size: 85%;
+            line-height: 30px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            margin: 0 auto 0;
+            color: black;
+        }
+
+        .paginator{
+            margin-top: 5%;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 5%;
+            box-shadow: 0px 0px 12px 3px rgba(0,0,0,0.3);
+            text-align: center;
+            width: 53%;
+        }
+
+        .angkahalaman{
+            color: rgb(151, 235, 27);
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        @media screen and (min-width: 567px) {
+            .pembungkus {
+                margin: 13% auto 0;
+                width: 70%;
+            }
+
+            .kotakjudul{
+                margin-top: -19%;
+            }
+
+            .judul{
+                font-size: 80%;
+            }
+
+            .paginator{
+                margin-top: 1%;
+                width: 15%;
+            }
+        }
+        
+    </style>
+
+    {%include "snippets/styles.html"%}
+</head>
+<body>
+    {%include "snippets/navbarblog.html"%}
+    <!-- <h1>{{Categories.category}}</h1> -->
+
+    <div class="pembungkus">
+            {% for post in Posts %}
+            <a href="{% url 'blog:ceritasingkat' post.slug %}">
+                <li class="list">
+                    <!-- cover 800x600 -->
+                    <img src="{{ post.cover.url }}" alt=""> 
+                    <div class="kotakjudul">
+                        <h3 class="judul">{{post.nama}}</h3>
+                    </div>
+                </li>
+            </a>
+            {% endfor %} 
+           
+    </div>
+
+    
+    
+    <div class="paginator">
+        {% if Posts.has_previous %}
+        <a href="?page={{ Posts.previous_page_number }}">&laquo</a>
+        {% else %}
+            <span>&laquo</span>
+        {% endif %}
+
+        {% for num in Posts.paginator.page_range %}
+            <strong>
+                <a href="?page={{ num }}" class="angkahalaman">
+                    {{num}}
+                </a>
+            </strong>
+        {% endfor %}
+                
+
+        {% if Posts.has_next %}
+            <a href="?page={{ Posts.next_page_number }}">&raquo</a>
+        {% else %}
+            <span>&raquo</span>
+        {% endif %}
+    </div>
+
+    {%include "snippets/scripts.html"%}
+</body>
+</html>

@@ -1,0 +1,191 @@
+body {
+
+    background-color: rgb(129, 70, 31) !important;
+    background-size: 1000%;
+    background-position: 100%;
+    overflow: hidden;
+}
+
+html{
+    overflow: hidden;
+}
+
+
+/*img {
+    position: absolute;
+    width: 770px;
+    display: block;
+    z-index: -1;
+    margin-top: -30%;
+    margin-left: 19%;
+
+}*/
+
+.quote {
+ 
+    color: papayawhip;
+ 
+}
+
+
+.titlepage {
+    color: white;
+    margin : 22% auto;
+    position: absolute;
+    animation: opacitytitlepage 1.7s ease 1 reverse forwards; 
+}
+
+.kotakisi {
+    margin-top: -10px;
+}
+
+.labeltag {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: seashell;
+}
+
+.tulisanhitam {
+    color: black;
+    
+}
+
+.tulisanabu {
+    color: rgb(199, 199, 199);
+    
+}
+
+
+.kotak {
+    width: 300px;
+    height: 350px;
+    background-color: #ff8251;
+    margin : 13% auto;
+    display: block;
+    background-image: url('../gambar/kotakRegis.png');
+    background-size: 100%;
+    background-position: 100%;
+    animation: animasiKotak 9.3s ease 1 reverse forwards; 
+}
+
+@keyframes animasiKotak{
+    0% {
+        width: 300px;
+        height: 350px;
+        border-radius: 4%;
+        filter: drop-shadow(5px 5px 5px black);
+        
+    }
+
+    20% {
+        transform: rotate(0deg);
+        
+    }
+
+    33% {
+        width: 35px;
+        height: 35px;
+        transition: ease-in;
+    }
+
+    67% {
+        width: 35px;
+        height: 35px;
+        border-radius: 70%;
+        transform: rotate(720deg) rotateY(720deg) ;
+        transition: ease-in;
+        opacity: 100%;
+    }
+
+    70% {
+        opacity: 0%;
+    }
+
+    100% {
+        width: 35px;
+        height: 35px;
+        border-radius: 70%;
+        opacity: 0%;
+        
+    }
+
+}
+
+.form {
+    margin-left: 55px;
+    display: block;
+    animation: formkotak 11.3s ease 1 reverse forwards; 
+    
+}
+
+.nightmode {
+    margin-top: 13%;
+    width: 30px;
+    height: 30px;
+    display: block;
+    background-color: rgb(201, 201, 0);
+    position: absolute;
+    margin-left: 80%;
+    border-radius: 50%;
+    animation: opacitynightmode 12s ease 1 reverse forwards;
+}
+
+.logobulansabit
+{
+    box-shadow: 10px 3px 0 0 rgb(3, 0, 189);
+    background-color: transparent;
+}
+
+@keyframes formkotak{
+    0% {
+        
+        opacity: 100%;
+    }
+
+    19% {
+        opacity: 0%;
+        
+    }
+
+    75% {
+        opacity: 0%;
+        
+    }
+}
+
+@keyframes opacitytitlepage{
+    0% {
+        
+        opacity: 100%;
+    }
+
+    70% {
+        opacity: 0%;
+        
+    }
+
+    100% {
+        opacity: 0%;
+        
+    }
+}
+
+@keyframes opacitynightmode{
+    0% {
+        
+        opacity: 100%;
+    }
+
+    13% {
+        opacity: 0%;
+        
+    }
+
+    100% {
+        opacity: 0%;
+        
+    }
+}
+
+@media screen and (min-width: 567px) {
+
+}
