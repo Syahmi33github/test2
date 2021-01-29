@@ -43,18 +43,32 @@
         
         .titlepage {
             color: white;
-            margin : 24% auto;
+            margin : 24%;
+            margin-left: 2%;
             position: absolute;
             animation: opacitytitlepage 1.7s ease 1 reverse forwards; 
         }
         
         .kotakisi {
             margin-top: -10px;
+            
+        }
+
+        .tombolsubmit{
+            margin-left: -38%;
+            text-align: left;
         }
         
         .labeltag {
             font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
             color: seashell;
+            
+        }
+
+        .labeltagposisi{
+            width: 100%;
+            margin-left: 19%;
+            text-align: left;
         }
         
         .tulisanhitam {
@@ -124,9 +138,9 @@
         }
         
         .form {
-            margin-left: 55px;
-            display: block;
+            margin-left: auto;
             animation: formkotak 11.3s ease 1 reverse forwards; 
+            text-align: center;
             
         }
         
@@ -255,27 +269,27 @@
                 {% csrf_token %}
                 
                 <h1 class = "labeltag">REGISTER</h1>
-                <h6 class = "labeltag">{{form.username.label_tag}}</h6>  
+                <h6 class = "labeltag labeltagposisi">{{form.username.label_tag}}</h6>  
                 <div class = "kotakisi">
                     {{form.username}}
                 </div>
                 
-                <h6 class = "labeltag">{{form.email.label_tag}}</h6> 
+                <h6 class = "labeltag labeltagposisi">{{form.email.label_tag}}</h6> 
                 <div class = "kotakisi">
                     {{form.email}}
                 </div>
                 
-                <h6 class = "labeltag">{{form.password1.label_tag}}</h6> 
+                <h6 class = "labeltag labeltagposisi">{{form.password1.label_tag}}</h6> 
                 <div class = "kotakisi">
                     {{form.password1}}
                 </div>
                 
-                <h6 class = "labeltag">{{form.password2.label_tag}}</h6>
+                <h6 class = "labeltag labeltagposisi">{{form.password2.label_tag}}</h6>
                 <div class = "kotakisi">
                     {{form.password2}}
                 </div>
                 <br>
-                <input class ="kotakisi" type="submit" name="Create User">
+                <input class ="tombolsubmit" type="submit" name="Create User">
             </form>
         </div>
     
