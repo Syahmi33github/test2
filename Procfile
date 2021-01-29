@@ -1,1 +1,1 @@
-web: gunicorn historyind.wsgi --log-file - 
+web: gunicorn TEST2.wsgi --log-file - 
