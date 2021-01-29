@@ -10,7 +10,6 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
-import django_heroku
 from pathlib import Path
 import os
 
@@ -135,4 +134,3 @@ STATIC_ROOT = os.path.join(BASE_DIR, "live-static", "static-root")
 
 # STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
-django_heroku.settings(locals())
