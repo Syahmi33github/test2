@@ -57,14 +57,13 @@
             }
         }
         
-        h1 {
+        .tulisanlogin {
             text-align: center;
         }
         
         .form {
-            margin-left: 17%;
+            margin-left: auto;
             margin-top: 5%;
-            position: absolute;
         }
         
         .isiian {
@@ -74,11 +73,16 @@
         .label {
             margin: 0;
             padding: 0;
+            text-align: left;
+            width: 68%;
         }
         
         .login {
             opacity: 0%;
             margin-bottom: 15%;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
         }
         
         .animationlogin {
@@ -100,12 +104,13 @@
         
         .buttonlogin{
             background-color: rgb(3, 197, 3);
+            margin-left: -46%;
         }
         
         .buttonregister{
             position: absolute;
-            margin-left: 65%;
-            margin-top: -32%;
+            margin-left: 58%;
+            margin-top: -26%;
             background-color: yellowgreen;
             opacity: 0%;
         }
@@ -221,7 +226,7 @@
 
     <div class="kotak">
         <div class="form">
-            <h1>LOG IN</h1>
+            <h1 class="tulisanlogin">LOG IN</h1>
             <form class="login" method="POST">
                 {% csrf_token %}
                 <label class="label" for="username">Username: </label>
