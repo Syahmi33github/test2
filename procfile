@@ -1,1 +1,1 @@
-web: gunicorn CCMS.wsgi --log-file -
+web: gunicorn historyind.wsgi --pythonpath app --log-file - 
