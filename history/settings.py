@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'y9@)l_xg3*#*)p4k1t0c#l@2l=kjm)j1v$jl&$*!qd7l1q+fm('
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1','historyind.herokuapp.com']
 
@@ -132,5 +132,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'static')
 
 STATIC_ROOT = os.path.join(BASE_DIR, "live-static", "static-root")
 
-# STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
