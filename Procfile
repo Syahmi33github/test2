@@ -1,0 +1,1 @@
+web: gunicorn historyind.wsgi --pythonpath app --log-file - 
