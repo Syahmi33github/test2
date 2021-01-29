@@ -8,6 +8,9 @@ from . import views
 
 from django.views.generic import ListView
 
+from django.views.static import serve
+from django.conf.urls import url
+
 app_name = 'blog'
 urlpatterns = [
     #listView
