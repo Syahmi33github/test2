@@ -1,0 +1,52 @@
+body{
+    background-color: lime !important
+}
+.gambar{
+    width: 75%;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin-left: 13%;
+    border: 5px solid rgba(0, 0, 0, 0.5);
+}
+
+.pembungkus{
+    width: 75%;
+    margin: 3% auto 0;
+    box-shadow: 0px 0px 12px 3px rgba(0,0,0,0.2);
+    background-color: white;
+}
+
+.judul{
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 130%;
+    text-transform: uppercase;
+    color: royalblue;
+}
+
+.isi{
+    font-size: 110%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    
+}
+
+.sinopsis{
+    font-weight: bold; 
+}
+
+@media screen and (min-width: 567px) {
+    .gambar{
+        width: 25%;
+        margin-left: 35%;
+    }
+
+    .judul{
+        font-size: 355%;
+    }
+    
+    .isi{
+        font-size: 155%;
+    }
+}

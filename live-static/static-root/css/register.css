@@ -61,7 +61,6 @@ html{
     background-color: #ff8251;
     margin : 13% auto;
     display: block;
-    background-image: url('../gambar/kotakRegis.png');
     background-size: 100%;
     background-position: 100%;
     animation: animasiKotak 9.3s ease 1 reverse forwards; 
