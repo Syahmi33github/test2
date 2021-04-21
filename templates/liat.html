@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block static %}
+    {% load static %}
+{% endblock static %}
+
+{% block title %}
+    {{Judul}}    
+{% endblock title %}
+
+{% block css %}
+    
+{% endblock css %}
+
+{% block contents %}
+
+    {% for post in posts %}
+        
+        <h1>{{post.judul}}</h1>
+        
+    {% endfor %}
+
+{% endblock contents %}
+
+{% block js %}
+    
+{% endblock js %}
+
+    
+
+    
+    

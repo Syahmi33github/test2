@@ -1,1 +1,1 @@
-web: gunicorn history.wsgi --log-file - 
+web: gunicorn tembak.wsgi --log-file -

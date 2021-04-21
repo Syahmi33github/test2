@@ -1,0 +1,188 @@
+{% extends 'base.html' %}
+
+{% block static %}
+    {% load static %}
+{% endblock static %}
+
+{% block title %}
+    {{Judul}}    
+{% endblock title %}
+
+{% block css %}
+    <style>
+        body{
+            background-color: black !important;
+            position: relative;
+        }
+
+        video{
+            margin-top: 8%;
+            width: 60%;
+            z-index: 1;
+        }
+
+        h1{
+            color: white;
+            
+            width: 75%;
+            text-align: right;
+            margin: auto;
+            position: absolute;
+            opacity: 0%;
+        }
+
+        .kata1{
+            margin-top: 10%;
+        }
+
+        .animationkata1 {
+            animation: animationkata1 2s ease-in 1 reverse forwards;
+            animation-delay: 17s;
+            
+        }
+        
+        @keyframes animationkata1{
+            0% {
+                opacity: 100%;
+            }
+            
+            100% {
+                opacity: 0%;
+            }
+        }
+
+        .kata2{
+            margin-top: 15%;
+        }
+
+        .animationkata2 {
+            animation: animationkata2 2s ease-in 1 reverse forwards;
+            animation-delay: 35s;
+            
+        }
+        
+        @keyframes animationkata2{
+            0% {
+                opacity: 100%;
+            }
+            
+            100% {
+                opacity: 0%;
+            }
+        }
+
+        .kata3{
+            margin-top: 20%;
+        }
+
+        .animationkata3 {
+            animation: animationkata3 2s ease-in 1 reverse forwards;
+            animation-delay: 60s;
+            
+        }
+        
+        @keyframes animationkata3{
+            0% {
+                opacity: 100%;
+            }
+            
+            100% {
+                opacity: 0%;
+            }
+        }
+
+        .kata4{
+            margin-top: 25%;
+        }
+
+        .animationkata4 {
+            animation: animationkata4 2s ease-in 1 reverse forwards;
+            animation-delay: 90s;
+            
+        }
+        
+        @keyframes animationkata4{
+            0% {
+                opacity: 100%;
+            }
+            
+            100% {
+                opacity: 0%;
+            }
+        }
+
+        .jawaban{
+            position: absolute;
+            opacity: 0%;
+            margin-left: 55%;
+            margin-top: 31%;
+            z-index: 5;
+        }
+
+        .nembak{
+            color: cornsilk;
+        }
+
+        .tombol{
+            text-align: right;
+        }
+
+        .animationjawaban {
+            animation: animationjawaban 2s ease-in 1 reverse forwards;
+            animation-delay: 100s;
+            
+        }
+        
+        @keyframes animationjawaban{
+            0% {
+                opacity: 100%;
+            }
+            
+            100% {
+                opacity: 0%;
+            }
+        }
+
+    </style>
+{% endblock css %}
+
+{% block contents %}
+    <div class="kata">
+        <h1 class="kata1 animationkata1">I</h1>
+        <h1 class="kata2 animationkata2">LOVE</h1>
+        <h1 class="kata3 animationkata3">YOU</h1>
+        <h1 class="kata4 animationkata4">SO MUCH</h1>
+
+    </div>
+
+    <form method="POST"  class="jawaban animationjawaban">
+        {% csrf_token %}
+        <div class="form-group">
+            <h3 class="nembak">
+                Pacaran Skuy?
+            </h3>
+            {{contact_form.judul}}
+        </div>
+    
+        <button type="submit" class="tombol">
+            Kirim
+        </button>
+    </form>  
+    
+    <video autoplay loop class="video">
+        <source src="{% static 'images/attavideo.mp4' %}" type="video/mp4">
+        
+    </video>
+
+    <!-- <video src="{% static 'images/smoke.mp4' %}" muted="" autoplay=""></video> -->
+
+{% endblock contents %}
+
+{% block js %}
+    
+{% endblock js %}
+
+    
+
+    
+    

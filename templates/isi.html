@@ -1,0 +1,166 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {{Judul}}    
+{% endblock title %}
+
+{% block css %}
+    <style>
+
+        *{
+            text-align: center;
+        }
+
+        body{
+            background-color: royalblue !important;
+        }
+
+        .kata{
+            opacity: 0%;
+        }
+
+        .paragraf1{
+            margin-top: 5%;
+        }
+
+        .animationparagraf1 {
+            animation: animationparagraf1 2s ease-in 1 reverse forwards;
+            animation-delay: 0.5s;
+            
+        }
+        
+        @keyframes animationparagraf1{
+            0% {
+                margin: 5% auto 0.5%;
+                opacity: 100%;
+            }
+            
+            100% {
+                margin: 7% auto 0.5%;
+                opacity: 0%;
+            }
+        }
+
+        .animationparagraf2 {
+            animation: animationparagraf2 2s ease-in 1 reverse forwards;
+            animation-delay: 3s;
+            
+        }
+        
+        @keyframes animationparagraf2{
+            0% {
+                margin-top: 0.5%;
+                opacity: 100%;
+            }
+            
+            100% {
+                margin-top: 3%;
+                opacity: 0%;
+            }
+        }
+
+        .animationparagraf3 {
+            animation: animationparagraf3 2s ease-in 1 reverse forwards;
+            animation-delay: 6.5s;
+            
+        }
+        
+        @keyframes animationparagraf3{
+            0% {
+                margin-top: 0.5%;
+                opacity: 100%;
+            }
+            
+            100% {
+                margin-top: 3%;
+                opacity: 0%;
+            }
+        }
+
+        .animationparagraf4 {
+            animation: animationparagraf4 2s ease-in 1 reverse forwards;
+            animation-delay: 10s;
+            
+        }
+        
+        @keyframes animationparagraf4{
+            0% {
+                margin-top: 0.5%;
+                opacity: 100%;
+            }
+            
+            100% {
+                margin-top: 3%;
+                opacity: 0%;
+            }
+        }
+
+        .animationparagraf5 {
+            animation: animationparagraf5 2s ease-in 1 reverse forwards;
+            animation-delay: 14s;
+            
+        }
+        
+        @keyframes animationparagraf5{
+            0% {
+                margin-top: 0.5%;
+                opacity: 100%;
+            }
+            
+            100% {
+                margin-top: 3%;
+                opacity: 0%;
+            }
+        }
+
+        .tombollogin{
+            background-color: wheat;
+            width: 10%;
+            text-decoration: none;
+            margin: auto;
+        }
+
+        .animationlogin {
+            animation: animationlogin 2s ease-in 1 reverse forwards;
+            animation-delay: 17s;
+            
+        }
+        
+        @keyframes animationlogin{
+            0% {
+                margin-top: 0.5%;
+                opacity: 100%;
+            }
+            
+            100% {
+                margin-top: 3%;
+                opacity: 0%;
+            }
+        }
+
+    </style>
+{% endblock css %}
+
+{% block contents %}
+    <h1 class="paragraf1 kata animationparagraf1">HAI PERKENALKAN INI AKU SI "A"</h1>
+    <h2 class="paragraf2 kata animationparagraf2">Maaf Belakangan ini Hadir ku Malah Menambah Beban Pikiranmu</h2>
+    <h2 class="paragraf3 kata animationparagraf3">Maaf Juga karna aku mungkin Kau Kehilangan Seorang Teman</h2>
+    <h2 class="paragraf4 kata animationparagraf4">Tapi Mulai Sekarang ku ingin Hadirku Membawa Tawa bagimu</h2>
+    <h2 class="paragraf5 kata animationparagraf5">Dah itu yk sih wkwk, ohh iya aku mau menyatakan sesuatu</h2>
+
+    {% load static %}
+    <a class="nav-link" href="{% url 'video:index' %}">
+        <h3 class="tombollogin kata animationlogin">
+            Lanjut
+        </h3>
+    </a>
+{% endblock contents %}
+
+{% block js %}
+    
+{% endblock js %}
+
+    
+
+    
+    
